@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Bed extends Model
 {
     use HasFactory;
+
+
+    public function patients() {
+        return $this->belongsToMany(Patient::class);
+    }
+
 }
