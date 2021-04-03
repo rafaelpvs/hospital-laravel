@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Internment extends Model
 {
     use HasFactory;
+
+    public function apartments() {
+        return $this->belongsToMany(Apartment::class);
+    }
+
+    public function patient() {
+        return $this->belongsTo(Patient::class);
+    }
 }
