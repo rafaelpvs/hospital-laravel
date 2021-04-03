@@ -12,4 +12,8 @@ class Patient extends Model
     public function beds() {
         return $this->belongsToMany(Bed::class);
     }
+
+    public function internments() {
+        $this->hasMany(Internment::class);
+    }
 }
