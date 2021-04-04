@@ -15,10 +15,6 @@ Take a look at the modeling
 
 <br/>
 
-This is the bootstrap template used
-
-[Bootstrap template](https://github.com/ColorlibHQ/gentelella)
-
 ## Requirements
 
 Composer - 2.0.9
