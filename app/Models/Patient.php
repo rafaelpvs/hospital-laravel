@@ -9,6 +9,14 @@ class Patient extends Model
 {
     use HasFactory;
 
+    public function phones() {
+        return $this->hasMany(Phone::class);
+    }
+
+    public function addresss() {
+        return $this->hasMany(Address::class);
+    }
+
     public function beds() {
         return $this->belongsToMany(Bed::class);
     }
