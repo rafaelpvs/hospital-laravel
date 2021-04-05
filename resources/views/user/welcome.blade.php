@@ -15,9 +15,7 @@
                 <th><a href="">{{$patient->name}}</a></th>
                 <td>{{$patient->birthdate}}</td>
                 <td>{{$patient->disease}}</td>
-                <td>
-                    @if($patient->internments)
-                </td>
+                <td></td>
             </tr>
             @endforeach
             </tbody>
