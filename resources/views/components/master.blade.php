@@ -13,10 +13,10 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ route('patients.index') }}">
                 <img src="{{asset('images/hospital-navbar-icon.png')}}" width="30" height="30" alt="">
             </a>
-            <a class="navbar-brand" href="#">HosSys</a>
+            <a class="navbar-brand" href="{{ route('patients.index') }}">HosSys</a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
 
@@ -25,7 +25,7 @@
                             Tools
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Register patient</a>
+                            <a class="dropdown-item" href="{{ route('patients.register') }}">Register patient</a>
                             <a class="dropdown-item" href="#"></a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Something else here</a>
