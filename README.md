@@ -23,6 +23,8 @@ PHP - 8.0
 
 Laravel - 8.35.1
 
+Mysql - 8
+
 ## Steps to run
 <br />
 First, take a look and make the installation of composer
@@ -61,16 +63,20 @@ or
 ````bash
 yarn install
 ````
-To finish, run the server to test if is ok
-````bash
-php artisan serve
-````
+
+
 Create a database and put the data accesses in the env file
 
 Run migration
 
 ````bash
 php artisan migrate
+````
+
+To finish, run the server to test if is ok
+
+````bash
+php artisan serve
 ````
 
 Open your browser in localhost:8000 and be ready to collaborate
