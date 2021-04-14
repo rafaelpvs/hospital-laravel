@@ -18,7 +18,7 @@ class CreatePatientsTable extends Migration
             $table->string('name');
             $table->string('cpf');
             $table->string('rg');
-            $table->string('birthdate');
+            $table->timestamp('birthdate');
             $table->string('disease');
             $table->timestamps();
         });
