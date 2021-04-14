@@ -1,46 +1,47 @@
 <x-master>
     @section('content')
         <h2>Patient register</h2>
-        <form>
+        <form method="post" action="{{ route('patients.store') }}" >
+            @csrf
             <div class="form-group">
-                <label for="exampleInputEmail1">Full name</label>
-                <input type="email" class="form-control" placeholder="">
+                <label for="name">Full name</label>
+                <input name = "name" type="text" class="form-control" placeholder="">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">CPF</label>
-                <input type="password" class="form-control" placeholder="">
+                <label for="cpf">CPF</label>
+                <input name = "cpf" type="text" class="form-control" placeholder="">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">RG</label>
-                <input type="password" class="form-control" placeholder="">
+                <label for="rg">RG</label>
+                <input name="rg" type="text" class="form-control" placeholder="">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Birth date</label>
-                <input type="password" class="form-control" placeholder="">
+                <label for="password">Birth date</label>
+                <input name="birthdate" type="date" class="form-control" placeholder="">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Disease</label>
-                <input type="password" class="form-control" placeholder="">
+                <label for="disease">Disease</label>
+                <input name="disease" type="text" class="form-control" placeholder="">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Phone number</label>
-                <input type="password" class="form-control" placeholder="">
+                <label for="phoneNumber">Phone number</label>
+                <input name="phone" type="text" class="form-control" placeholder="">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Street</label>
-                <input type="password" class="form-control" placeholder="">
+                <label for="street">Street</label>
+                <input name="street" type="text" class="form-control" placeholder="">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">City</label>
-                <input type="password" class="form-control" placeholder="">
+                <label for="city">City</label>
+                <input name="city" type="text" class="form-control" placeholder="">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">District</label>
-                <input type="password" class="form-control" placeholder="">
+                <label for="district">District</label>
+                <input name="district" type="text" class="form-control" placeholder="">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">State</label>
-                <input type="password" class="form-control" placeholder="">
+                <label for="state">State</label>
+                <input name="state" type="text" class="form-control" placeholder="">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
