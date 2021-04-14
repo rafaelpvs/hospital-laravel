@@ -18,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PatientsController::class, 'index'])->name('patients.index');
 Route::get('/patients/register', [PatientsController::class, 'create'])->name('patients.register');
+Route::post('/patients', [App\Http\Controllers\PatientsController::class, 'store'])->name('patients.store');
