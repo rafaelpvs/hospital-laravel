@@ -13,7 +13,7 @@
             @foreach($patients as $patient)
             <tr>
                 <th><a href="">{{$patient->name}}</a></th>
-                <td>{{$patient->birthdate}}</td>
+                <td>{{$patient->age()}}</td>
                 <td>{{$patient->disease}}</td>
                 <td></td>
             </tr>
