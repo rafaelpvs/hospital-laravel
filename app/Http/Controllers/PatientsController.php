@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 class PatientsController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *
@@ -38,7 +40,14 @@ class PatientsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $patient = new Patient();
+        $patient->name=$request['name'];
+        $patient->cpf=$request['cpf'];
+        $patient->rg=$request['rg'];
+        $patient->birthdate=$request['birthdate'];
+        $patient->disease=$request['disease'];
+        $patient->save();
+        return redirect('/');
     }
 
     /**
