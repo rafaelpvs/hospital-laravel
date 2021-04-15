@@ -18,7 +18,7 @@
             </div>
             <div class="form-group">
                 <label for="birthdate">Birth date</label>
-                <input name="birthdate" type="text" class="form-control" placeholder="">
+                <input name="birthdate" type="date" class="form-control" placeholder="">
             </div>
             <div class="form-group">
                 <label for="disease">Disease</label>
@@ -41,13 +41,16 @@
                 <input name="zipcode" type="text" class="form-control" placeholder="">
             </div>
             <div class="form-group">
-                <label for="state">State</label>
-                <input name="state" type="text" class="form-control" placeholder="">
-
+                <label for="district">District</label>
+                <input name="district" type="text" class="form-control" placeholder="">
             </div>
             <div class="form-group">
                 <label for="state">State</label>
                 <input name="state" type="text" class="form-control" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="zipcode">Zipcode</label>
+                <input name="zipcode" type="text" class="form-control" placeholder="">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
