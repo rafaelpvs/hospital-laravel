@@ -12,7 +12,7 @@
             @foreach($patients as $patient)
                 @if($patient->currentInternment())
             <tr>
-                <th><a href="">{{$patient->name}}</a></th>
+                <th><a href="{{ route('patients.show', $patient->id) }}">{{$patient->name}}</a></th>
                 <td>{{$patient->age()}}</td>
                 <td>{{$patient->disease}}</td>
             </tr>
