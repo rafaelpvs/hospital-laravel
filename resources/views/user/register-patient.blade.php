@@ -2,7 +2,7 @@
     @section('content')
         <h2>Patient register</h2>
 
-        <form action="" method="POST">
+        <form action="{{ route('patients.store') }}" method="post" >
             @csrf
             <div class="form-group">
                 <label for="name">Full name</label>
