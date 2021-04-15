@@ -11,11 +11,11 @@ class Patient extends Model
     use HasFactory;
 
     protected $fillable = [
-        'street',
-        'district',
-        'city',
-        'zipcode',
-        'state',
+
+        'name',
+        'cpf',
+        'rg',
+        'birthdate',
     ];
     public function age() {
         $age = Carbon::parse($this->birthdate);
