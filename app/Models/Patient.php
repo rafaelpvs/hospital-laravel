@@ -9,6 +9,14 @@ use Illuminate\Database\Eloquent\Model;
 class Patient extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'street',
+        'district',
+        'city',
+        'zipcode',
+        'state',
+    ];
     public function age() {
         $age = Carbon::parse($this->birthdate);
         return $age->diff(Carbon::now())->format('%y years');
