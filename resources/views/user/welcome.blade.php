@@ -6,17 +6,17 @@
                 <th scope="col">Name</th>
                 <th scope="col">Age</th>
                 <th scope="col">Disease</th>
-                <th scope="col">Interned</th>
             </tr>
             </thead>
             <tbody>
             @foreach($patients as $patient)
+                @if($patient->currentInternment())
             <tr>
                 <th><a href="">{{$patient->name}}</a></th>
                 <td>{{$patient->age()}}</td>
                 <td>{{$patient->disease}}</td>
-                <td></td>
             </tr>
+                @endif
             @endforeach
             </tbody>
         </table>
