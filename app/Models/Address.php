@@ -9,10 +9,11 @@ class Address extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name',
-        'cpf',
-        'rg',
-        'birthdate',
+        'street',
+        'district',
+        'city',
+        'zipcode',
+        'state',
     ];
 
     public function patient() {
