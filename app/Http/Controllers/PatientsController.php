@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Internment;
 use App\Models\Patient;
 use Illuminate\Http\Request;
 
@@ -40,13 +41,16 @@ class PatientsController extends Controller
      */
     public function store(Request $request)
     {
-        $patient = new Patient();
-        $patient->name=$request['name'];
-        $patient->cpf=$request['cpf'];
-        $patient->rg=$request['rg'];
-        $patient->birthdate=$request['birthdate'];
-        $patient->disease=$request['disease'];
+        $patient = new Patient($request->only('name', 'cpf','rg', 'birthdate'));
         $patient->save();
+        $patient->address()->create($request->only(
+            'street',
+            'district',
+            'city',
+            'zipcode',
+            'state'
+        ));
+        $patient->internments()->create($request->only('disease'));
         return redirect('/');
     }
 
