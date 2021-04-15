@@ -26,8 +26,8 @@ class Patient extends Model
         return $this->hasMany(Phone::class);
     }
 
-    public function addresss() {
-        return $this->hasMany(Address::class);
+    public function address() {
+        return $this->hasOne(Address::class);
     }
 
     public function beds() {
