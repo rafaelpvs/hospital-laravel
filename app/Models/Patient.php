@@ -38,6 +38,9 @@ class Patient extends Model
         return $this->hasMany(Internment::class);
     }
     public function currentInternment() {
-        return $this->internments->contains('departure_time', null);
+        return $this->internments->last();
+    }
+    public function isInterned() {
+        return $this->internments->contains('departure_time','==', null);
     }
 }
