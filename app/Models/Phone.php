@@ -9,6 +9,13 @@ class Phone extends Model
 {
     use HasFactory;
 
+
+    protected $fillable = [
+        'ddd',
+        'ddi',
+        'number',
+    ];
+
     public function patient() {
         return $this->belongsTo(Patient::class);
     }
