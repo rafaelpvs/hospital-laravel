@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PatientsController;
+use App\Http\Controllers\InternmentsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,6 @@ Route::get('/', [PatientsController::class, 'index'])->name('patients.index');
 Route::get('/patients/register', [PatientsController::class, 'create'])->name('patients.register');
 Route::post('/patients/register', [App\Http\Controllers\PatientsController::class, 'store'])->name('patients.store');
 Route::get('/patients/{id}', [App\Http\Controllers\PatientsController::class, 'show'])->name('patients.show');
+
+Route::get('/internments/historic', [InternmentsController::class, 'index'])->name('patients.historic');
+Route::patch('/internments/{id}', [InternmentsController::class, 'update'])->name('internments.update');
