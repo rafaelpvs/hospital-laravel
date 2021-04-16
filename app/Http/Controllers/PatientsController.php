@@ -23,6 +23,7 @@ class PatientsController extends Controller
         return view('user.welcome', ['patients'=>$patients]);
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -51,6 +52,7 @@ class PatientsController extends Controller
             'state'
         ));
         $patient->internments()->create($request->only('disease'));
+        $patient->phones()->create($request->only('ddd', 'ddi', 'number'));
         return redirect('/');
     }
 
@@ -62,7 +64,7 @@ class PatientsController extends Controller
      */
     public function show($id)
     {
-        $patient = Patient::findOrFail(1);
+        $patient = Patient::find($id);
         return view('user.show-patient', ['patient'=>$patient]);
     }
 
