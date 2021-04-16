@@ -10,11 +10,11 @@
             </thead>
             <tbody>
             @foreach($patients as $patient)
-                @if($patient->currentInternment())
+                @if($patient->isInterned())
             <tr>
                 <th><a href="{{ route('patients.show', $patient->id) }}">{{$patient->name}}</a></th>
                 <td>{{$patient->age()}}</td>
-                <td>{{$patient->disease}}</td>
+                <td>{{$patient->currentInternment()->disease}}</td>
             </tr>
                 @endif
             @endforeach
