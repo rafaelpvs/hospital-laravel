@@ -25,8 +25,13 @@
                 <input name="disease" type="text" class="form-control" placeholder="">
             </div>
             <div class="form-group">
-                <label for="phone">Phone number</label>
-                <input name="phone" type="text" class="form-control" placeholder="">
+                <label class="mr-sm-2" for="phone">Phone number</label>
+                <div class="form-inline">
+                    <input name="ddd" type="text" class="form-control col-1  mr-3" placeholder="DDD">
+                    <input name="ddi" type="text" class="form-control col-1  mr-3" placeholder="DDI">
+                    <input name="number" type="text" class="form-control mr-3" placeholder="Number">
+                </div>
+
             </div>
             <div class="form-group">
                 <label for="street">Street</label>
@@ -48,10 +53,7 @@
                 <label for="state">State</label>
                 <input name="state" type="text" class="form-control" placeholder="">
             </div>
-            <div class="form-group">
-                <label for="zipcode">Zipcode</label>
-                <input name="zipcode" type="text" class="form-control" placeholder="">
-            </div>
+
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     @endsection
