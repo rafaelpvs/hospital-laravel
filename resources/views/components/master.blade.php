@@ -28,7 +28,7 @@
                             <a class="dropdown-item" href="{{ route('patients.register') }}">Register patient</a>
 
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Historic</a>
+                            <a class="dropdown-item" href="{{ route('patients.historic') }}">Historic</a>
                         </div>
                     </li>
                 </ul>
