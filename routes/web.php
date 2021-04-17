@@ -24,3 +24,4 @@ Route::get('/patients/{id}', [App\Http\Controllers\PatientsController::class, 's
 
 Route::get('/internments/historic', [InternmentsController::class, 'index'])->name('patients.historic');
 Route::patch('/internments/{id}', [InternmentsController::class, 'update'])->name('internments.update');
+Route::post('/internment', [InternmentsController::class, 'store'])->name('internments.store');
