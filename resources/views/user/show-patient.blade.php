@@ -41,10 +41,10 @@
             <hr>
             <div class="row">
                 <div class="col-sm-3">
+
                     <h6 class="mb-0">Current interned</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-{{--                    {{dd($patient->isInterned())}}--}}
                     @if($patient->isInterned() == true)
 
                         <form method="POST" action="{{ route('internments.update', $patient->currentInternment()->id) }}">

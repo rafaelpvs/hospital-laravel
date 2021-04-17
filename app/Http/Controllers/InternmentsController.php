@@ -39,13 +39,14 @@ class InternmentsController extends Controller
      */
     public function store(Request $request)
     {
+
         $patient = Patient::find($request['patientid']);
         if($patient->isInterned()){
             return 'Patient is already interned';
         }else{
+
             $patient->internments()->create($request->only('disease'));
-            $patient->currentInternment()->departure_time = Carbon::now();
-            $patient->save();
+
         }
         return back();
     }
@@ -82,8 +83,9 @@ class InternmentsController extends Controller
     public function update(Request $request, $id)
     {
         $internment = Internment::find($id);
-        if($internment->departure_time){
-            if($internment->patient->isInterned()){
+        if($internment->departure_time != null){
+
+            if($internment->patient->isInterned() == true){
 
                 return 'Patient is already interned';
             }else{
