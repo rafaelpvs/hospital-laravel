@@ -82,13 +82,17 @@ class InternmentsController extends Controller
     public function update(Request $request, $id)
     {
         $internment = Internment::find($id);
-//        dd($internment);
         if($internment->departure_time){
-            $internment->departure_time = null;
+            if($internment->patient->isInterned()){
+
+                return 'Patient is already interned';
+            }else{
+                $internment->departure_time = null;
+            }
+
         }else {
             $internment->departure_time = now();
         }
-//        dd($internment);
         $internment->save();
         return  back();
     }
