@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Internment;
+use App\Models\Patient;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -38,6 +39,15 @@ class InternmentsController extends Controller
      */
     public function store(Request $request)
     {
+        $patient = Patient::find($request['patientid']);
+        if($patient->isInterned()){
+            return 'Patient is already interned';
+        }else{
+            $patient->internments()->create($request->only('disease'));
+            $patient->currentInternment()->departure_time = Carbon::now();
+            $patient->save();
+        }
+        return back();
     }
 
     /**
