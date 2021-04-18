@@ -44,9 +44,9 @@
 
                     <h6 class="mb-0">Current interned</h6>
                 </div>
-                <div class="col-sm-9 text-secondary">
-                    @if($patient->isInterned() == true)
 
+                    @if($patient->isInterned() == true)
+                        
                         <form method="POST" action="{{ route('internments.update', $patient->currentInternment()->id) }}">
                             @csrf
                             <input name="_method" type="hidden" value="PATCH">
@@ -135,29 +135,37 @@
     </div>
 
         <div class="card mb-3">
-
-
-
             <div class="card-body">
                 <div class="row">
                     <div class="col-sm-3">
                         <h5 class="mb-0">Phones</h5>
                     </div>
                 </div>
-                <hr>
+                @foreach($patient->phones as $phone)
+                    <hr>
                 <div class="row">
-                    <div class="col-sm-3">
-                        <h6 class="mb-0 bold">Street</h6>
-                    </div>
                     <div class="col-sm-9 text-secondary">
-                        {{ $patient->address->street }}
+                        {{ "+".$phone->ddd." (".$phone->ddi.") ". $phone->number }}
                     </div>
+                    <form method="POST" action="{{ route('phones.destroy', $phone->id) }}">
+                        @csrf
+                        <input name="_method" type="hidden" value="DELETE">
+                        <input class="btn btn-danger" type="submit" value="Delete">
+                    </form>
                 </div>
-
-
+                @endforeach
             </div>
         </div>
 
+        <form class="form-inline" method="POST" action="{{ route('phones.store') }}">
+            @csrf
+            <input name="_method" type="hidden" value="POST">
+            <input name="patientid" type="hidden" value="{{$patient->id}}">
+            <input name="ddd" type="text" class="form-control col-1  mr-3" placeholder="DDD">
+            <input name="ddi" type="text" class="form-control col-1  mr-3" placeholder="DDI">
+            <input name="number" type="text" class="form-control mr-3" placeholder="Number">
+            <input type="submit" class="btn btn-success" value="New phone">
+        </form>
     @endsection
 
 </x-master>
