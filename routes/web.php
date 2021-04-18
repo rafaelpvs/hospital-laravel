@@ -25,3 +25,5 @@ Route::get('/patients/{id}', [App\Http\Controllers\PatientsController::class, 's
 Route::get('/internments/historic', [InternmentsController::class, 'index'])->name('patients.historic');
 Route::patch('/internments/{id}', [InternmentsController::class, 'update'])->name('internments.update');
 Route::post('/internment', [InternmentsController::class, 'store'])->name('internments.store');
+Route::post('/phones', [\App\Http\Controllers\PhonesController::class, 'store'])->name('phones.store');
+Route::delete('/phones/{id}', [\App\Http\Controllers\PhonesController::class, 'destroy'])->name('phones.destroy');
