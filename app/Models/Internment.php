@@ -19,4 +19,7 @@ class Internment extends Model
     public function patient() {
         return $this->belongsTo(Patient::class);
     }
+    public function madicamentApplications() {
+        return $this->hasMany(MedicamentApplication::class);
+    }
 }
