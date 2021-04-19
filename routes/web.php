@@ -27,3 +27,7 @@ Route::patch('/internments/{id}', [InternmentsController::class, 'update'])->nam
 Route::post('/internment', [InternmentsController::class, 'store'])->name('internments.store');
 Route::post('/phones', [\App\Http\Controllers\PhonesController::class, 'store'])->name('phones.store');
 Route::delete('/phones/{id}', [\App\Http\Controllers\PhonesController::class, 'destroy'])->name('phones.destroy');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
