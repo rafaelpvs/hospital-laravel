@@ -75,16 +75,32 @@
                             <h5 class="mb-0">Medicaments</h5>
                         </div>
                     </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <h6 class="mb-0 bold">Medicament</h6>
+
+
+                    @foreach($patient->currentInternment()->medicamentApplications()->get() as $application)
+                        <hr>
+                    <div class=" card-body row">
+
+                        <div class="col-sm-3 text-secondary">
+                            <h6>
+                                Band: {{$application->medicament()->first()->name}}
+                            </h6>
                         </div>
-                        <div class="col-sm-9 text-secondary">
-                            {{ $patient->currentInternment()}}
+                        <div class="col-3 text-secondary">
+                            <h6>
+                                Name: {{$application->medicament()->first()->name}}
+                            </h6>
                         </div>
+                        <div class="col-3 text-secondary">
+                            <h6>
+                                Recieped at: {{\Carbon\Carbon::make($application->created_at)->ago()}}
+                            </h6>
+                        </div>
+
                     </div>
-                    <hr>
+                    @endforeach
+
+
 
                 </div>
             </div>
