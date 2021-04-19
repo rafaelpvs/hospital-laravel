@@ -20,7 +20,6 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('cpf');
             $table->string('rg');
-            $table->string('cpf');
             $table->timestamp('birthdate');
             $table->integer('userable_id')->unsigned()->index();
             $table->string('userable_type');
