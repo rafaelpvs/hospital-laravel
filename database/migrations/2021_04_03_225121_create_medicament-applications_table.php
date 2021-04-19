@@ -15,9 +15,10 @@ class CreateMedicamentApplicationsTable extends Migration
     {
         Schema::create('medicament-applications', function (Blueprint $table) {
             $table->id();
-            $table->integer('medicament_id')->unsigned()->nullable()->index();
-            $table->integer('nurse_id')->unsigned()->nullable()->index();
-            $table->integer('doctor_recieper')->unsigned()->nullable()->index();
+            $table->integer('internment_id')->unsigned()->index();
+            $table->integer('medicament_id')->unsigned()->index();
+            $table->integer('nurse_id')->unsigned()->index();
+            $table->integer('doctor_recieper')->unsigned()->index();
             $table->timestamps();
         });
     }

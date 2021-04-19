@@ -15,8 +15,9 @@ class CreateBedPatientTable extends Migration
     {
         Schema::create('bed_patient', function (Blueprint $table) {
             $table->id();
-            $table->integer('patient_id')->unsigned()->nullable()->index();
-            $table->integer('bed_id')->unsigned()->nullable()->index();
+            $table->integer('patient_id')->unsigned()->index();
+            $table->integer('bed_id')->unsigned()->index();
+            $table->timestamp('departure_time')->nullable();
             $table->timestamps();
         });
     }

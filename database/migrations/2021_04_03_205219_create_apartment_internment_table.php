@@ -15,8 +15,9 @@ class CreateApartmentInternmentTable extends Migration
     {
         Schema::create('apartment_internment', function (Blueprint $table) {
             $table->id();
-            $table->integer('internment_id')->unsigned()->nullable()->index();
-            $table->integer('apartment_id')->unsigned()->nullable()->index();
+            $table->integer('internment_id')->unsigned()->index();
+            $table->integer('apartment_id')->unsigned()->index();
+            $table->timestamp('departure_time')->nullable();
             $table->timestamps();
         });
     }

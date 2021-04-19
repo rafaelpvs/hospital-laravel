@@ -15,7 +15,7 @@ class CreateInternmentsTable extends Migration
     {
         Schema::create('internments', function (Blueprint $table) {
             $table->id();
-            $table->integer('patient_id')->unsigned()->nullable()->index();
+            $table->integer('patient_id')->unsigned()->index();
             $table->string('disease');
             $table->timestamp('departure_time')->nullable();
             $table->timestamps();

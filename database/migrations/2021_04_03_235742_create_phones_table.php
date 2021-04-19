@@ -15,7 +15,7 @@ class CreatePhonesTable extends Migration
     {
         Schema::create('phones', function (Blueprint $table) {
             $table->id();
-            $table->integer('patient_id')->index();
+            $table->integer('patient_id')->unsigned()->index();
             $table->string('ddd');
             $table->string('ddi');
             $table->string('number');
