@@ -16,4 +16,11 @@ class MedicamentApplication extends Model
     public function medicament() {
         return $this->belongsTo(Medicament::class);
     }
+    public function doctorRecieper() {
+        return $this->belongsTo(User::class, 'doctor_recieper');
+    }
+
+    public function nurseApplicator() {
+        return $this->belongsTo(User::class, 'nurse_id');
+    }
 }
