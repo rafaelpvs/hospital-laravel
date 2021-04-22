@@ -76,34 +76,42 @@
                         </div>
                     </div>
 
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">Band</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Recieped_at</th>
+                            <th scope="col">Recieped_by</th>
+                            <th scope="col">Apply/Applied_by</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($patient->currentInternment()->medicamentApplications()->get() as $application)
+                        <tr>
+                            <td>{{$application->medicament()->first()->band}}</td>
+                            <td>{{$application->medicament()->first()->name}}</td>
+                            <td>{{\Carbon\Carbon::make($application->created_at)->ago()}}</td>
+                            <td>{{$application->doctorRecieper()->first()->name}}</td>
+                            <td>
 
-                    @foreach($patient->currentInternment()->medicamentApplications()->get() as $application)
-                        <hr>
-                    <div class=" card-body row">
-
-                        <div class="col-sm-3 text-secondary">
-                            <h6>
-                                Band: {{$application->medicament()->first()->name}}
-                            </h6>
-                        </div>
-                        <div class="col-3 text-secondary">
-                            <h6>
-                                Name: {{$application->medicament()->first()->name}}
-                            </h6>
-                        </div>
-                        <div class="col-3 text-secondary">
-                            <h6>
-                                Recieped at: {{\Carbon\Carbon::make($application->created_at)->ago()}}
-                            </h6>
-                        </div>
-
-                    </div>
-                    @endforeach
-
-
-
+                                @if($application->application_time != null)
+                                    {{$application->nurseApplicator()->first()->name}}
+                                @else
+                                    <form method="POST" action="{{ route('application.update', $application->id) }}">
+                                        @csrf
+                                        <input name="_method" type="hidden" value="PATCH">
+                                        <input type="submit" class="btn btn-success" value="Apply">
+                                    </form>
+                                @endif
+                            </td>
+                        </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
+
         @endif
     <div class="card  m-4">
 
