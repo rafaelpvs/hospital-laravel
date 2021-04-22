@@ -66,7 +66,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-//        dd($data['type']);
+
         if($data['type'] == 'nurse'){
             $userable = Nurse::create([
                 'codename' => 'nurse',
@@ -84,7 +84,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-
+//        dd($user);
 
         return $user;
     }
