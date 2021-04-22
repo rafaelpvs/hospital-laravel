@@ -6,6 +6,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Age</th>
                 <th scope="col">Disease</th>
+                <th scope="col">Medicaments</th>
                 <th scope="col">Interned</th>
             </tr>
             </thead>
@@ -15,6 +16,9 @@
                         <th><a href="{{ route('patients.show',$internment->patient->id) }}">{{$internment->patient->name}}</a></th>
                         <td>{{$internment->patient->age()}}</td>
                         <td>{{$internment->disease}}</td>
+                        <td>
+                            <a href="{{ route('internment.medicaments', $internment->id) }}" class="btn btn-info">Medicament Applications</a>
+                        </td>
                         <td>
 
                             @if($internment->departure_time == null)
