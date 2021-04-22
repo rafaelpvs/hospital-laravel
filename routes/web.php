@@ -27,7 +27,8 @@ Route::patch('/internments/{id}', [InternmentsController::class, 'update'])->nam
 Route::post('/internment', [InternmentsController::class, 'store'])->name('internments.store');
 Route::post('/phones', [\App\Http\Controllers\PhonesController::class, 'store'])->name('phones.store');
 Route::delete('/phones/{id}', [\App\Http\Controllers\PhonesController::class, 'destroy'])->name('phones.destroy');
-
+Route::get('/internment/{id}/medicaments', [InternmentsController::class, 'medicaments'])->name('internment.medicaments');
+Route::patch('/applications/{id}', [\App\Http\Controllers\MedicamentApplicationsController::class, 'update'])->name('application.update');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
