@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Internment;
+use App\Models\MedicamentApplication;
 use App\Models\Patient;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -108,5 +109,11 @@ class InternmentsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function medicaments($id) {
+
+        $applications = Internment::findOrFail($id)->medicamentApplications()->get();
+        return view('user.internment-medicaments',['applications'=> $applications]);
     }
 }
