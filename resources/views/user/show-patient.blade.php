@@ -207,10 +207,10 @@
         @csrf
         <input name="_method" type="hidden" value="POST">
         <input name="patientid" type="hidden" value="{{$patient->id}}">
-        <input name="ddd" type="text" class="form-control col-1  mr-3" placeholder="DDD">
-        <input name="ddi" type="text" class="form-control col-1  mr-3" placeholder="DDI">
-        <input name="number" type="text" class="form-control mr-3" placeholder="Number">
-        <input type="submit" class="btn btn-success" value="New phone">
+        <input required name="ddd" type="text" class="form-control col-1  mr-3" placeholder="DDD">
+        <input required name="ddi" type="text" class="form-control col-1  mr-3" placeholder="DDI">
+        <input required name="number" type="text" class="form-control mr-3" placeholder="Number">
+        <input required type="submit" class="btn btn-success" value="New phone">
     </form>
     @endsection
 
