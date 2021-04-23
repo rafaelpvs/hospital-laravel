@@ -28,7 +28,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">Birthdate</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="date" class="form-control" name="birthdate"   autofocus>
+                                <input required id="name" type="date" class="form-control" name="birthdate"   autofocus>
                             </div>
                         </div>
 
@@ -51,7 +51,7 @@
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">Type of employee</label>
                             <div class="col-md-6">
-                            <select form="form" name="type" class="" aria-label=".form-select-lg example">
+                            <select required form="form" name="type" class="" aria-label=".form-select-lg example">
                                 <option value="" selected>Select the option</option>
                                 <option value="nurse">Nurse</option>
                                 <option value="doctor">Doctor</option>
