@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Internment;
+use App\Models\Medicament;
 use App\Models\MedicamentApplication;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MedicamentApplicationsController extends Controller
 {
@@ -36,7 +39,16 @@ class MedicamentApplicationsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $medicament =  new Medicament($request->only('band', 'name'));
+        $medicament->save();
+        DB::table('medicament-applications')->insert([
+            'internment_id'=>$request['internment-id'],
+            'medicament_id'=>$medicament->id,
+            'doctor_recieper'=>auth()->user()->id,
+            'created_at'=>Carbon::now(),
+        ]);
+        return back();
+
     }
 
     /**
