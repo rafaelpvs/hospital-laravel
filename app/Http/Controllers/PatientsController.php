@@ -76,7 +76,8 @@ class PatientsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $patient = Patient::findOrFail($id);
+        return view('user.edit-patient', ['patient'=>$patient]);
     }
 
     /**
@@ -88,7 +89,10 @@ class PatientsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $patient = Patient::findOrFail($id);
+        $patient->update($request->only('name', 'cpf', 'rg', 'birthdate'));
+        return view('user.show-patient', ['patient'=>$patient]);
     }
 
     /**
