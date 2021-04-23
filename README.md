@@ -9,7 +9,7 @@
 
 Take a look at the modeling
 
-[Data Modeling](https://drive.google.com/file/d/1AVP9kdmTTQurqS4n-lnYFNeZNDB0AKSq/view?usp=sharing)
+[Data Modeling](https://drive.google.com/file/d/1AWg8iSl4XAfmKpSkl8FXZFid44bG_BIv/view?usp=sharing)
 
 <i>I am open to suggestions for changes and corrections about the modeling</i>
 
