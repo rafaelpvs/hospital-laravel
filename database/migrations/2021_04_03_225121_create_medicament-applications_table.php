@@ -17,7 +17,7 @@ class CreateMedicamentApplicationsTable extends Migration
             $table->id();
             $table->integer('internment_id')->unsigned()->index();
             $table->integer('medicament_id')->unsigned()->index();
-            $table->integer('nurse_id')->unsigned()->index();
+            $table->integer('nurse_id')->nullable()->unsigned()->index();
             $table->timestamp('application_time')->nullable();
             $table->integer('doctor_recieper')->unsigned()->index();
             $table->timestamps();
