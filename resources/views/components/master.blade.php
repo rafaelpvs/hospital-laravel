@@ -19,7 +19,7 @@
             <a class="navbar-brand" href="{{ route('patients.index') }}">HosSys</a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-
+                    @if(auth()->user())
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Tools
@@ -31,6 +31,7 @@
                             <a class="dropdown-item" href="{{ route('patients.historic') }}">Historic</a>
                         </div>
                     </li>
+                    @endif
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
