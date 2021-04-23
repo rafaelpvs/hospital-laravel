@@ -97,7 +97,8 @@
 
                                 @if($application->application_time != null)
                                     {{$application->nurseApplicator()->first()->name}}
-                                @else
+                                @elseif(auth()->user()->userable_type == "App\Models\Nurse")
+
                                     <form method="POST" action="{{ route('application.update', $application->id) }}">
                                         @csrf
                                         <input name="_method" type="hidden" value="PATCH">
@@ -108,7 +109,18 @@
                         </tr>
                         @endforeach
                         </tbody>
+
                     </table>
+                  @if(auth()->user()->userable_type == "App\Models\Doctor")
+                    <form class="form-inline m-4" method="POST" action="{{ route('application.store') }}">
+                        @csrf
+                        <input name="_method" type="hidden" value="POST">
+                        <input name="internment-id" type="hidden" value="{{$patient->currentInternment()->id}}">
+                        <input required name="band" type="text" class="form-control col-1  mr-3" placeholder="Band">
+                        <input required name="name" type="text" class="form-control mr-3" placeholder="Name">
+                        <input required type="submit" class="btn btn-success" value="New medicament">
+                    </form>
+                    @endif
                 </div>
             </div>
 
@@ -176,7 +188,7 @@
 
     <div class="row m-4">
         <div class="col-sm-12 text-center">
-            <input class="btn btn-primary btn-md" value="Edit">
+            <a href="{{ route('patients.edit', $patient->id) }}" class="btn btn-primary btn-md">Edit</a>
         </div>
     </div>
 
